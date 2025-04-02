@@ -1,0 +1,7 @@
+import { ColDef } from 'ag-grid-community';
+
+export const columnDefs: ColDef[]= [
+  {headerName: 'ID', field: 'id', sortable: true, filter: true },
+  {headerName: 'Name', field: 'name', sortable: true, filter: true },
+  {headerName: 'Age', field: 'age', sortable: true, filter: true },
+]

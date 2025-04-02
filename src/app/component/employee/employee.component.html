@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header class="card border-0">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <!-- Company Name on Left -->
+      <div class="company-name">
+        <h3>Tata Motors Pvt Ltd</h3>
+      </div>
+
+      <div class="add-employee-button">
+        <button mat-raised-button (click)="addEmployee()">Add Employee</button>
+      </div>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="content d-flex justify-content-center my-5">
+      <ag-grid-angular
+      style="width: 78%; height: 500px;"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs"
+      [rowData]="rowData"
+      [defaultColDef]="defaultColDef"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      [paginationPageSizeSelector]="paginationPageSizeSelector"
+      [paginateChildRows]="true">
+      </ag-grid-angular>
+    </div>
+  </mat-card-content>
+</mat-card>

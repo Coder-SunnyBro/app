@@ -1,0 +1,17 @@
+.mdc-card{
+  margin: 2%;
+}
+
+.no-arrow-input::-webkit-outer-spin-button,
+.no-arrow-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-arrow-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.mdc-card__actions{
+  justify-content: center;
+}

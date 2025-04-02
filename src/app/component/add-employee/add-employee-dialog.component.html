@@ -1,0 +1,65 @@
+<html>
+  <body>
+    <div >
+      <mat-card>
+        <mat-card-header>
+          <h3>{{title}}</h3>
+          <!-- <button mat-raised-button >Add New</button> -->
+        </mat-card-header>
+        <mat-card-content class="m-3">
+            <form [formGroup]="empForm" (ngSubmit)="saveEmployee()">
+              <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Id</mat-label>
+                      <input matInput type="number" formControlName="id" tabindex="-1" class="no-arrow-input">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Name</mat-label>
+                      <input matInput type="text" formControlName="name" tabindex="-1">
+                    </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Email</mat-label>
+                      <input matInput type="email" formControlName="email" tabindex="-1">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Joining Date</mat-label>
+                        <input matInput [matDatepicker]="picker" placeholder="Salect Joining Date" formControlName="joining_date" tabindex="-1">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Salary</mat-label>
+                      <input matInput type="number" formControlName="salary" tabindex="-1" class="no-arrow-input">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Address</mat-label>
+                      <textarea matInput type="textarea" formControlName="address" tabindex="-1"></textarea>
+                    </mat-form-field>
+                </div>
+              </div>
+              <!-- <button mat-raised-button type="submit" [disabled]="empForm.invalid">Submit</button> -->
+              <mat-card-actions>
+                <button type="submit" style="margin-right: 5px;" [disabled]="empForm.invalid" mat-raised-button color="primary">{{title ==='Add Employee'?'Add Employee':'Update'}}</button>
+                <a mat-raised-button color="accent" (click)="closeDialog()">Close</a>
+              </mat-card-actions>
+            </form>
+          </mat-card-content>
+          </mat-card>
+    </div>
+  </body>
+</html>
